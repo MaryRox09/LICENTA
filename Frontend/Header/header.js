@@ -7,7 +7,7 @@ toggle.addEventListener('click', () => {
   document.body.classList.toggle('noscroll');
 });
 
-// Închide meniul când alegi o pagină
+
 links.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => {
     toggle.classList.remove('open');
@@ -17,10 +17,7 @@ links.querySelectorAll('a').forEach(a => {
 });
 
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
-    // Funcție generică pentru încărcarea unui fragment HTML
     function loadFragment(elementId, filePath) {
         fetch(filePath)
             .then(response => response.text())
@@ -31,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(err => console.error("Eroare la încărcarea", filePath, err));
     }
 
-    // Atenție: path-urile sunt relative la pagina HTML (index.html este în /HTML)
     loadFragment("site-header", "../Header/header.html");
     loadFragment("site-footer", "../Footer/footer.html");
 });
