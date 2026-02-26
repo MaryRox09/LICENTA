@@ -1,0 +1,147 @@
+/* Reset general */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+/* Configurare Footer Premium */
+.subsol-premium {
+    background: #1a1a1a; /* Negru mat */
+    color: #ffffff;
+    padding-top: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Bara de accent de sus - Schimbată în nuanțe de VERDE */
+.subsol-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    /* Gradient de la verde închis la un verde mai deschis, ca natura */
+    background: linear-gradient(90deg, #1b3d18, #2d5a27, #4ca644); 
+}
+
+.continut-subsol {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Stiluri pentru Secțiuni --- */
+.sectiune {
+    margin-bottom: 30px;
+}
+
+.sectiune h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+/* Accent la logo - Schimbat în VERDE */
+.sectiune h2 span { color: #2d5a27; } 
+
+.sectiune h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Linie mică sub titluri - Schimbată în VERDE */
+.sectiune h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: #2d5a27;
+}
+
+/* --- Coloana 1: Despre --- */
+.despre { flex: 1; min-width: 300px; padding-right: 40px; }
+.despre p { color: #b0b0b0; line-height: 1.6; margin-bottom: 20px; }
+
+.sociale a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #1f1f1f;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: 0.3s;
+    -webkit-transition:;
+    -moz-transition:;
+    -ms-transition:;
+    -o-transition:;
+}
+/* Hover sociale - Schimbat în VERDE */
+.sociale a:hover {
+    background: #2d5a27; 
+    transform: translateY(-3px);
+}
+
+/* --- Coloana 2: Linkuri --- */
+.linkuri { flex: 0.5; min-width: 200px; }
+.linkuri ul { list-style: none; }
+.linkuri ul li { margin-bottom: 12px; }
+.linkuri ul li a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: 0.3s;
+    display: block;
+}
+.linkuri ul li a:hover {
+    color: #fff;
+    padding-left: 8px;
+}
+
+/* --- Coloana 3: Contact Info --- */
+.contact-info { flex: 0.8; min-width: 250px; }
+
+.rand-contact {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 15px;
+    color: #b0b0b0;
+}
+
+/* Iconițe contact - Schimbate în VERDE */
+.rand-contact i {
+    color: #2d5a27; 
+    font-size: 18px;
+    margin-right: 15px;
+    width: 20px; 
+    text-align: center;
+}
+
+.rand-contact a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.rand-contact a:hover { color: #fff; }
+
+/* --- Bara de jos --- */
+.bara-jos {
+    background: #111111;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    border-top: 1px solid #1f1f1f;
+    color: #666; /* Un gri mai închis pentru a nu ieși în evidență */
+    font-size: 14px;
+}
+
+/* --- Mobil --- */
+@media (max-width: 768px) {
+    .continut-subsol { flex-direction: column; }
+    .despre, .linkuri, .contact-info { padding-right: 0; width: 100%; }
+}

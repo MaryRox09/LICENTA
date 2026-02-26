@@ -1,0 +1,43 @@
+.pasiuni{
+    box-shadow:0 10px 30px rgba(0, 0, 0.06, 0.2);
+    border-radius: 10px;
+    
+
+}
+
+  
+    
+.pasiuni:hover{
+    transform:translateY(-5px);
+    -webkit-transform:translateY(-5px);
+    -moz-transform:translateY(-5px);
+    -ms-transform:translateY(-5px);
+    -o-transform:translateY(-5px);
+}
+
+
+.poza {
+    width: 300px; /* Setează o lățime fixă */
+    height: 300px; /* Setează aceeași înălțime pentru a fi pătrată */
+    border-radius: 50%;  
+    border: 5px solid white; /* Opțional: o margine albă frumoasă */
+}
+
+
+
+/* Stilul personalizat pentru buton */
+.btn-custom-contact {
+    background-color: #2d5a27 !important; /* Verde pădure */
+    color: white !important;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px; /* Formă ovală/modernă */
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-custom-contact:hover {
+    background-color: #1e3d1a !important; /* Verde mai închis la trecerea mouse-ului */
+    transform: scale(1.05); /* Se mărește ușor */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}

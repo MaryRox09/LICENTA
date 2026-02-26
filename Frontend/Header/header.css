@@ -1,0 +1,139 @@
+/* ===== Reset & Bază ===== */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html, body { 
+    height: 100%; 
+}
+
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    color: #111; 
+    background: #fff; 
+}
+
+/* ===== NAVBAR Principal (Bara de sus) ===== */
+/* ===== NAVBAR (Bara care conține totul) ===== */
+.main-nav {
+    position: absolute !important; /* SCHIMBAT din fixed în absolute */
+    top: 0; 
+    left: 0; 
+    right: 0;
+    height: 60px;
+    padding: 0 20px;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    background: transparent; 
+    z-index: 1000;
+}
+
+/* ===== HAMBURGER (Butonul cu linii) ===== */
+.nav-toggle {
+    position: absolute !important; /* SCHIMBAT din fixed în absolute */
+    top: 15px; 
+    right: 20px;
+    z-index: 2100;
+    background: rgba(0, 0, 0, 0.4); 
+    border: none; 
+    cursor: pointer;
+    width: 45px; 
+    height: 45px;
+    border-radius: 8px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.nav-toggle:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Stilul liniuțelor individuale */
+.nav-toggle .bar {
+    width: 28px; 
+    height: 2px; 
+    border-radius: 2px;
+    background: #ffffff;    /* Culoarea albă pentru contrast pe pozele de munte */
+    margin: 3.5px 0; 
+    transition: all 0.3s ease;
+}
+
+/* Animația transformării în "X" (când meniul e deschis) */
+.nav-toggle.open .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.nav-toggle.open .bar:nth-child(2) {
+    opacity: 0; /* Linia din mijloc dispare */
+}
+.nav-toggle.open .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ===== MENIU OVERLAY (Doar cât înălțimea pozei) ===== */
+.nav-links {
+    list-style: none;
+    display: none;          /* Ascuns implicit */
+    position: absolute;     /* Se raportează la partea de sus a paginii */
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 50vh;           /* Setează la fel ca înălțimea caruselului tău */
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.9); /* Fundal închis modern */
+    backdrop-filter: blur(10px);    /* Efect de blur premium */
+    -webkit-backdrop-filter: blur(10px);
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px;
+}
+
+.nav-links.active { 
+    display: flex; /* Apare când dai click pe hamburger */
+}
+
+.nav-links li a {
+    font-size: 1.5rem; 
+    text-decoration: none; 
+    color: #ffffff; 
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover { 
+    color: #8dbb31; /* Verdele de accent din restul site-ului */
+}
+
+/* ===== CARUSEL (Elementele de fundal) ===== */
+.carousel-image {
+    height: 50vh; /* Ajustează aici dacă vrei caruselul mai mare/mic */
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-image-overlay {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Strat protector pentru text */
+}
+
+/* ===== RESPONSIVITATE ===== */
+@media (max-width: 768px) {
+    .nav-links li a {
+        font-size: 1.2rem;
+    }
+    .carousel-image, .nav-links {
+        height: 40vh; /* Pe mobil poate fi puțin mai mic */
+    }
+}
